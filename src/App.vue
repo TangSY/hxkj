@@ -2,6 +2,7 @@
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
         <HelloWorld msg="Welcome to hxkj.vip"/>
+        <div>test jenkins</div>
     </div>
 </template>
 
