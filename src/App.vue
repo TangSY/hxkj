@@ -1,29 +1,26 @@
 <template>
     <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png">
-        <HelloWorld msg="Welcome to hxkj.vip"/>
-        <div>test jenkins again！！！</div>
+        <top-header></top-header>
+        <router-view v-wechat-title="$route.meta.title" img-set="javascript:;"></router-view>
     </div>
 </template>
 
 <script>
-    import HelloWorld from './components/HelloWorld.vue'
+    import TopHeader from "./components/common/TopHeader.vue";
 
     export default {
         name: 'app',
         components: {
-            HelloWorld
+            TopHeader
         }
     }
 </script>
 
 <style>
+    @import "./style/reset.styl";
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
     }
 </style>
