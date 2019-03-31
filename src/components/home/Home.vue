@@ -14,7 +14,7 @@
                 </div>
                 <div class="subtitle">Play Codes</div>
             </div>
-            <video autoplay loop name="media" src="//hxkj.vip/banner_video.ogv" type="video/ogg"></video>
+            <video preload muted autoplay loop name="media" src="//hxkj.vip/banner_video.mp4"></video>
         </div>
         <div class="content">
             <p class="title">Anything is possible</p>
@@ -55,13 +55,14 @@
     @import "../../style/common.styl"
 
     .video {
+        position relative
         width 100%
         height 650px
         overflow hidden
         .box {
             position absolute
             width 100%
-            height 650px
+            height 100%
             top 0
             left 0
             flexContent()
@@ -81,6 +82,8 @@
         }
         video {
             width 100%
+            height 100%
+            object-fit cover
         }
     }
 
