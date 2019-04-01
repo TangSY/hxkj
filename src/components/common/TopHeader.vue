@@ -19,6 +19,8 @@
 
 <script>
 
+    import {throttle} from "../../utils/util";
+
     export default {
         name: "TopHeader",
         data() {
@@ -32,7 +34,7 @@
             }
         },
         mounted() {
-            window.addEventListener('scroll',this.handleScroll, true);
+            window.addEventListener('scroll',throttle(this.handleScroll, 200), true);
         },
         computed: {},
         methods: {
@@ -58,7 +60,7 @@
         width 100%
         padding 20px 15px
         flexBetween()
-        z-index 2
+        z-index 99
         font-size 14px
         img {
             width 100px

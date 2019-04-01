@@ -463,7 +463,7 @@ export const isCanClick = function (delay) {
  * 图片大图预览
  * @param url
  */
-export const createImagePreview = function(url) {
+export const createImagePreview = function (url) {
     let previewDiv = document.createElement('div');
     previewDiv.style.cssText = "position:fixed;\n" +
         "        top:0;\n" +
@@ -491,11 +491,11 @@ export const createImagePreview = function(url) {
  * 检测图片是否存在
  * @param url
  */
-export const imageIsExist = function(url) {
+export const imageIsExist = function (url) {
     return new Promise((resolve) => {
         var img = new Image();
         img.onload = function () {
-            if (this.complete == true){
+            if (this.complete == true) {
                 resolve(true)
             }
         }
@@ -511,7 +511,7 @@ export const imageIsExist = function(url) {
  * @param num
  * @returns {string}
  */
-export let sortKey = function(array, key) {
+export let sortKey = function (array, key) {
     return array.sort(function (a, b) {
         let x = a[key]
         let y = b[key]
@@ -526,11 +526,11 @@ export let sortKey = function(array, key) {
  * @param immediate
  * @returns {Function}
  */
-export let debounce = function(func, wait, immediate) {
+export let debounce = function (func, wait, immediate) {
     let timeout;
-    return function() {
+    return function () {
         let context = this, args = arguments;
-        let later = function() {
+        let later = function () {
             timeout = null;
             if (!immediate) func.apply(context, args);
         };
@@ -540,3 +540,22 @@ export let debounce = function(func, wait, immediate) {
         if (callNow) func.apply(context, args);
     };
 };
+
+/**
+ *
+ * @param fn  节流函数
+ * @param delayTime  等待时间
+ * @returns {Function}
+ */
+export let throttle = function (fn, delayTime) {
+    let flag;
+    return function () {
+        let context = this, args = arguments;
+        if (!flag) {
+            flag = setTimeout(function () {
+                fn.apply(context, args);
+                flag = false;
+            }, delayTime);
+        }
+    }
+}
