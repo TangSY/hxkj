@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@xkeshi/vue-qrcode": "github:xkeshi/vue-qrcode",
     "axios": "^0.18.0",
     "qs": "^6.6.0",
     "vue": "^2.6.6",
