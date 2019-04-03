@@ -80,16 +80,52 @@
             </div>
         </div>
         <div class="video">
+            <div class="box">
+                <p class="title">项目咨询</p>
+                <div class="process">
+                    <div class="process-item">
+                        <i class="iconfont icon-xuqiu"></i>
+                        <span>需求</span>
+                    </div>
+                    <span>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </span>
+                    <div class="process-item">
+                        <i class="iconfont icon-yanfagongju"></i>
+                        <span>研发</span>
+                    </div>
+                    <span>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </span>
+                    <div class="process-item">
+                        <i class="iconfont icon-yanfabu"></i>
+                        <span>部署</span>
+                    </div>
+                </div>
+                <p class="title">需求咨询</p>
+                <span class="gap">或</span>
+                <p class="title">开发咨询</p>
+                <span>
+                    <i class="gap iconfont icon-arrow-down-copy"></i>
+                </span>
+                <div class="consultation" @click="consultation">向我咨询</div>
+            </div>
             <video preload muted autoplay loop name="media" src="//hxkj.vip/banner_video.mp4"></video>
+        </div>
+        <div class="content">
+            <p class="title">Talk is cheap, show me the code.</p>
+            <span class="says">-- Linus</span>
         </div>
     </div>
 </template>
 
 <script>
     import QRcode from '@xkeshi/vue-qrcode'
+    import {checkPlatform} from "../../utils/util";
+
     export default {
         name: "Home",
-        components: {qrcode : QRcode},
+        components: {qrcode: QRcode},
         data() {
             return {
                 skills: [
@@ -163,6 +199,13 @@
         methods: {
             articleDetail(link) {//查看文章详情
                 window.location.href = link;
+            },
+            consultation() {//咨询
+                if (checkPlatform() == 3) {
+                    window.open('http://wpa.qq.com/msgrd?v=3&uin=337828932&site=在线客服&menu=yes');
+                } else {
+                    window.open('mqqwpa://im/chat?chat_type=wpa&uin=337828932&version=1&src_type=web&web_src=http:://wpa.b.qq.com');
+                }
             }
         }
     }
@@ -244,19 +287,6 @@
                     font-size 14px
                 }
             }
-        }
-    }
-
-    .video {
-        position relative
-        width 100%
-        height 700px
-        overflow hidden
-        margin-top 150px
-        video {
-            width 100%
-            height 100%
-            object-fit cover
         }
     }
 
@@ -342,7 +372,7 @@
                 left 0
                 position absolute
                 background-color rgba(0, 0, 0, .7)
-                background-img url("../../assets/blur-cover.png")
+                background-image url("../../assets/blur-cover.png")
             }
             .author-bg {
                 display inherit
@@ -355,7 +385,7 @@
     .article-box {
         margin-top -250px
         padding-top 300px
-        background rgba(1,32,81,.1)
+        background rgba(1, 32, 81, .1)
         .article {
             max-width 900px
             margin 0 auto
@@ -369,6 +399,7 @@
                 margin-top 30px
                 font-size 14px
                 .article-item {
+                    border-radius 5px
                     margin-bottom 30px
                     background white
                     flexAlign()
@@ -380,7 +411,7 @@
                             font-size 20px
                             cursor pointer
                             &:hover {
-                                color rgba(1,32,81,.8)
+                                color rgba(1, 32, 81, .8)
                             }
                         }
                         .article-time {
@@ -391,6 +422,7 @@
                         }
                         .article-content {
                             line-height 25px
+                            font-weight 400
                         }
                     }
                     .article-right {
@@ -408,13 +440,85 @@
                             cursor pointer
                             margin-top 10px
                             &:hover {
-                                background rgba(1,32,81,.1)
+                                background rgba(1, 32, 81, .1)
                             }
                         }
                     }
                 }
             }
         }
+    }
+
+    .video {
+        position relative
+        width 100%
+        height 680px
+        overflow hidden
+        .box {
+            flexAlign()
+            flex-direction column
+            position absolute
+            width 100%
+            height 100%
+            top 0
+            left 0
+            z-index 2
+            background-color rgba(0, 0, 0, .7)
+            background-image url("../../assets/blur-cover.png")
+            color white
+            padding-top 80px
+            .title {
+                font-size 26px
+            }
+            .process {
+                flexAlign()
+                flex-wrap wrap
+                padding-top 50px
+                margin-bottom 50px
+                .process-item {
+                    padding 0 50px
+                    margin 0 30px
+                    padding-bottom 20px
+                    flexAlign()
+                    flex-direction column
+                    &:nth-child(3) {
+                        border-bottom 1px solid white
+                    }
+                    i {
+                        font-size 72px
+                        margin-bottom 20px
+                    }
+                }
+            }
+            span {
+                i {
+                    font-size 28px
+                }
+            }
+            .gap {
+                display inline-block
+                margin 20px 0
+            }
+            .consultation {
+                font-size 18px
+                border 1px solid white
+                border-radius 5px
+                padding 10px 30px
+                cursor pointer
+                &:hover {
+                    background rgba(255, 255, 255, .3)
+                }
+            }
+        }
+        video {
+            width 100%
+            height 100%
+            object-fit cover
+        }
+    }
+
+    .says {
+        margin-top 50px
     }
 
 </style>

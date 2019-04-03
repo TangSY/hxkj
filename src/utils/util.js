@@ -5,15 +5,16 @@
  */
 
 /**
- * 判断安卓与IOS平台
- * @returns {string}
+ * 判断运行平台
+ * @returns {string} 1：安卓  2：IOS  3：PC
  */
 export const checkPlatform = function () {
     if (/android/i.test(navigator.userAgent)) {
         return '1'
-    }
-    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+    } else if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
         return '2'
+    } else {
+        return '3'
     }
 }
 

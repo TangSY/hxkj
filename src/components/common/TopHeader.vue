@@ -7,7 +7,7 @@
 <template>
     <div>
         <div class="header" :class="{'scroll-down': isShowScroll}">
-            <img src="../../assets/logo.png" alt="" class="logo">
+            <img src="../../assets/logo.png" alt="" class="logo" @click="home">
             <div class="menu">
                 <ul>
                     <li class="menu-item" v-for="(item, index) in menu" :key="index">{{ item.name }}</li>
@@ -45,6 +45,9 @@
                 } else {
                     this.isShowScroll = false;
                 }
+            },
+            home() {
+                this.$router.push({name: 'home'});
             }
         }
     }
@@ -64,6 +67,7 @@
         font-size 14px
         img {
             width 100px
+            cursor pointer
         }
         .menu ul {
             flexAlign()
