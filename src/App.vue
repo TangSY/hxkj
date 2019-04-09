@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <top-header></top-header>
+        <top-header @jump="intoModel"></top-header>
         <router-view v-wechat-title="$route.meta.title" img-set="javascript:;"></router-view>
     </div>
 </template>
@@ -12,6 +12,11 @@
         name: 'app',
         components: {
             TopHeader
+        },
+        methods: {
+            intoModel(model) {
+                this.$router.push({name: model});
+            }
         }
     }
 </script>

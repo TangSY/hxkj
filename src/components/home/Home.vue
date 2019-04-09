@@ -6,16 +6,13 @@
 */
 <template>
     <div class="container">
-        <div class="top">
-            <div class="box">
-                <div class="title">
-                    <span class="special">编程</span>
-                    <span>の趣</span>
-                </div>
-                <div class="subtitle">Play Codes</div>
+        <top-banner>
+            <div class="title">
+                <span class="special">编程</span>
+                <span>の趣</span>
             </div>
-            <img src="../../assets/coding.jpg" alt="">
-        </div>
+            <div class="subtitle">Play Codes</div>
+        </top-banner>
         <div class="content">
             <p class="title">Anything is possible</p>
             <span class="subtitle">我正在关注的开发领域与技能</span>
@@ -72,7 +69,7 @@
                             <p class="article-content">{{ item.content }}</p>
                         </div>
                         <div class="article-right">
-                            <qrcode :value="item.link" :options="{ size: 100 }"></qrcode>
+                            <q-rcode :value="item.link" :options="{ size: 100 }"></q-rcode>
                             <div class="article-btn" @click="articleDetail(item.link)">阅读全文</div>
                         </div>
                     </div>
@@ -116,16 +113,21 @@
             <p class="title">Talk is cheap, show me the code.</p>
             <span class="says">-- Linus</span>
         </div>
+        <bottom></bottom>
     </div>
 </template>
 
 <script>
     import QRcode from '@xkeshi/vue-qrcode'
     import {checkPlatform} from "../../utils/util";
+    import Bottom from "../common/Bottom.vue";
+    import TopBanner from "../common/TopBanner.vue";
 
     export default {
         name: "Home",
-        components: {qrcode: QRcode},
+        components: {
+            TopBanner,
+            Bottom,QRcode},
         data() {
             return {
                 skills: [
@@ -214,39 +216,6 @@
 <style lang="stylus" scoped>
     @import "../../style/common.styl"
 
-    .top {
-        position relative
-        width 100%
-        height 650px
-        overflow hidden
-        .box {
-            position absolute
-            width 100%
-            height 100%
-            top 0
-            left 0
-            flexContent()
-            flex-direction column
-            background rgba(0, 0, 0, .7)
-            color white
-            .title {
-                font-size 50px
-                .special {
-                    color orange-color
-                }
-            }
-            .subtitle {
-                margin-top 10px
-                font-size 34px
-            }
-        }
-        img {
-            width 100%
-            height 100%
-            object-fit cover
-        }
-    }
-
     .content {
         flexContent()
         flex-direction column
@@ -273,6 +242,15 @@
                 border 1px solid bg-color
                 border-radius 50%
                 margin 0 20px
+                &:hover {
+                    border-color main-color
+                    .en {
+                        font-size 24px
+                    }
+                    .name {
+                        font-size 16px
+                    }
+                }
                 i {
                     font-size 38px
                 }
@@ -315,6 +293,11 @@
                         border 1px solid rgba(0, 0, 0, .5)
                         border-radius 30px
                         height 10px
+                        &:hover {
+                            .skill-bar {
+                                box-shadow 2px 2px 20px #fff
+                            }
+                        }
                         .skill-bar {
                             position absolute
                             width 100%
@@ -403,6 +386,9 @@
                     margin-bottom 30px
                     background white
                     flexAlign()
+                    &:hover {
+                        box-shadow 2px 2px 20px #000
+                    }
                     .article-left {
                         padding 20px
                         border-right 1px dashed vice-font-color

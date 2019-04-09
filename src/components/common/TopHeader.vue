@@ -7,10 +7,10 @@
 <template>
     <div>
         <div class="header" :class="{'scroll-down': isShowScroll}">
-            <img src="../../assets/logo.png" alt="" class="logo" @click="home">
+            <img src="../../assets/logo-white.png" alt="" class="logo" @click="home">
             <div class="menu">
                 <ul>
-                    <li class="menu-item" v-for="(item, index) in menu" :key="index">{{ item.name }}</li>
+                    <li class="menu-item" v-for="(item, index) in menu" :key="index" @click="intoModel(item.model)">{{ item.name }}</li>
                 </ul>
             </div>
         </div>
@@ -47,7 +47,10 @@
                 }
             },
             home() {
-                this.$router.push({name: 'home'});
+                this.$emit('jump', 'home');
+            },
+            intoModel(model) {
+                this.$emit('jump', model);
             }
         }
     }
@@ -68,6 +71,7 @@
         img {
             width 100px
             cursor pointer
+            margin-left 20px
         }
         .menu ul {
             flexAlign()
@@ -87,8 +91,13 @@
     }
 
     .scroll-down {
-        background linear-gradient(to right, #fff, #000)
+        background #000
         padding 5px 15px
+        img {
+            width 100px
+            cursor pointer
+            margin-left 0px
+        }
         .menu ul {
             .menu-item {
                 margin 0 15px
