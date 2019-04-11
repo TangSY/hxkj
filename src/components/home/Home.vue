@@ -110,24 +110,20 @@
             <video preload muted autoplay loop name="media" src="//hxkj.vip/banner_video.mp4"></video>
         </div>
         <div class="content">
-            <p class="title">Talk is cheap, show me the code.</p>
+            <div id="imgContainer" @mouseover="imageClickHandler"></div>
             <span class="says">-- Linus</span>
         </div>
-        <bottom></bottom>
     </div>
 </template>
 
 <script>
     import QRcode from '@xkeshi/vue-qrcode'
-    import {checkPlatform} from "../../utils/util";
-    import Bottom from "../common/Bottom.vue";
+    import {checkPlatform, Fragment} from "../../utils/util";
     import TopBanner from "../common/TopBanner.vue";
 
     export default {
         name: "Home",
-        components: {
-            TopBanner,
-            Bottom,QRcode},
+        components: {TopBanner, QRcode},
         data() {
             return {
                 skills: [
@@ -192,10 +188,26 @@
                         link: 'https://www.jianshu.com/p/e49c8003c0e8',
                     }
                 ],//文章列表
+                TWO_PI: Math.PI * 2,
+                urls: [require('../../assets/talk.png')],
+                image: null,
+                imageWidth: 728,
+                imageHeight: 113,
+                vertices: [],
+                indices: [],
+                fragments: [],
+                container: '',
+                clickPosition: [],
+                isCanHover: true,//是否可以触发hover动画
             }
         },
         mounted() {
-
+            this.clickPosition = [
+                this.imageWidth * 0.5,
+                this.imageHeight * 0.5
+            ]
+            this.container = document.getElementById('imgContainer');
+            this.onLoad();
         },
         computed: {},
         methods: {
@@ -208,6 +220,131 @@
                 } else {
                     window.open('mqqwpa://im/chat?chat_type=wpa&uin=337828932&version=1&src_type=web&web_src=http:://wpa.b.qq.com');
                 }
+            },
+            onLoad() {
+                TweenMax.set(this.container, {perspective: 500});
+                this.image = new Image();
+                this.image.onload = () => {
+                    this.placeImage(false);
+                };
+                this.image.src = this.urls[0];
+            },
+            placeImage(transitionIn) {
+                this.isCanHover = true;
+//                this.image.addEventListener('hover', this.imageClickHandler);
+                this.container.appendChild(this.image);
+                if (transitionIn !== false) {
+                    TweenMax.fromTo(this.image, 0.75, {x: -800, y: 0}, {
+                        y: 0,
+                        x: 0,
+                        ease: Elastic.easeOut
+                    });
+                }
+            },
+            imageClickHandler(event) {
+                if (!this.isCanHover) return;
+                var box = this.image.getBoundingClientRect(), top = box.top, left = box.left;
+                this.clickPosition[0] = event.clientX - left;
+                this.clickPosition[1] = event.clientY - top;
+                this.triangulate();
+                this.shatter();
+            },
+            triangulate() {
+                var rings = [
+                    {
+                        r: 50,
+                        c: 12
+                    },
+                    {
+                        r: 150,
+                        c: 12
+                    },
+                    {
+                        r: 300,
+                        c: 12
+                    },
+                    {
+                        r: 1200,
+                        c: 12
+                    }
+                ], x, y, centerX = this.clickPosition[0], centerY = this.clickPosition[1];
+                this.vertices.push([
+                    centerX,
+                    centerY
+                ]);
+                rings.forEach((ring) => {
+                    var radius = ring.r, count = ring.c, variance = radius * 0.25;
+                    for (var i = 0; i < count; i++) {
+                        if (window.CP.shouldStopExecution(2)) {
+                            break;
+                        }
+                        x = Math.cos(i / count * this.TWO_PI) * radius + centerX + this.randomRange(-variance, variance);
+                        y = Math.sin(i / count * this.TWO_PI) * radius + centerY + this.randomRange(-variance, variance);
+                        this.vertices.push([
+                            x,
+                            y
+                        ]);
+                    }
+                    window.CP.exitedLoop(2);
+                });
+                this.vertices.forEach((v) => {
+                    v[0] = this.clamp(v[0], 0, this.imageWidth);
+                    v[1] = this.clamp(v[1], 0, this.imageHeight);
+                });
+                this.indices = Delaunay.triangulate(this.vertices);
+            },
+            shatter() {
+                var p0, p1, p2, fragment;
+                var tl0 = new TimelineMax({onComplete: this.shatterCompleteHandler});
+                for (var i = 0; i < this.indices.length; i += 3) {
+                    if (window.CP.shouldStopExecution(3)) {
+                        break;
+                    }
+                    p0 = this.vertices[this.indices[i + 0]];
+                    p1 = this.vertices[this.indices[i + 1]];
+                    p2 = this.vertices[this.indices[i + 2]];
+                    fragment = new Fragment(p0, p1, p2, this.image);
+                    var dx = fragment.centroid[0] - this.clickPosition[0],
+                        dy = fragment.centroid[1] - this.clickPosition[1],
+                        d = Math.sqrt(dx * dx + dy * dy), rx = 300 * this.sign(dy), ry = 900 * -this.sign(dx),
+                        delay = d * 0.003 * this.randomRange(0.1, 0.25);
+                    fragment.canvas.style.zIndex = Math.floor(d).toString();
+                    var tl1 = new TimelineMax();
+                    tl1.to(fragment.canvas, this.randomRange(0.25, 1), {
+                        z: this.randomRange(-1500, 1500),
+                        rotationX: rx,
+                        rotationY: ry,
+                        x: this.randomRange(-2000, 2000),
+                        y: this.randomRange(-2000, 2000),
+                        ease: Expo.easeIn
+                    });
+                    tl1.to(fragment.canvas, 0.4, {alpha: 0}, 0.6);
+                    tl0.insert(tl1, delay);
+                    this.fragments.push(fragment);
+                    this.container.appendChild(fragment.canvas);
+                }
+                window.CP.exitedLoop(3);
+                this.container.removeChild(this.image);
+                this.isCanHover = false;
+//                this.image.removeEventListener('click', this.imageClickHandler);
+            },
+            shatterCompleteHandler() {
+                this.fragments.forEach((f) => {
+                    this.container.removeChild(f.canvas);
+                });
+                this.fragments.length = 0;
+                this.vertices.length = 0;
+                this.indices.length = 0;
+                this.placeImage();
+            },
+            randomRange(min, max) {
+                return min + (max - min) * Math.random();
+            },
+            clamp(x, min, max) {
+                return x < min ? min : x > max ? max : x;
+            },
+            sign(x) {
+                return x < 0 ? -1 : 1;
             }
         }
     }
@@ -215,6 +352,10 @@
 
 <style lang="stylus" scoped>
     @import "../../style/common.styl"
+
+    .container {
+        overflow hidden
+    }
 
     .content {
         flexContent()
@@ -503,8 +644,16 @@
         }
     }
 
-    .says {
-        margin-top 50px
+    .content {
+        position relative
+        #imgContainer {
+            width 728px
+            height 113px
+            top -100px
+        }
+        .says {
+            margin-top 50px
+        }
     }
 
 </style>
