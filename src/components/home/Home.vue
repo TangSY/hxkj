@@ -231,7 +231,6 @@
             },
             placeImage(transitionIn) {
                 this.isCanHover = true;
-//                this.image.addEventListener('hover', this.imageClickHandler);
                 this.container.appendChild(this.image);
                 if (transitionIn !== false) {
                     TweenMax.fromTo(this.image, 0.75, {x: -800, y: 0}, {
@@ -326,7 +325,6 @@
                 window.CP.exitedLoop(3);
                 this.container.removeChild(this.image);
                 this.isCanHover = false;
-//                this.image.removeEventListener('click', this.imageClickHandler);
             },
             shatterCompleteHandler() {
                 this.fragments.forEach((f) => {
