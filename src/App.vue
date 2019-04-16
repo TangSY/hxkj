@@ -18,6 +18,7 @@
         },
         methods: {
             intoModel(model) {
+                this.$ba.trackEvent('hxkj-header', 'nav', model);
                 this.$router.push({name: model});
             }
         }

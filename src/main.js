@@ -12,8 +12,12 @@ import axios from './http'
 import Qs from 'qs'
 //通过配置router参数，设置页面标题
 import VueWechatTitle from 'vue-wechat-title'
-
 Vue.use(VueWechatTitle)
+
+//引入百度统计插件
+import ba from 'vue-ba'
+Vue.use(ba, 'b0668f30d62e1597bdb36d05edea8960')
+
 
 import {imageIsExist} from "./utils/util";
 

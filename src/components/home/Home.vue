@@ -212,12 +212,15 @@
         computed: {},
         methods: {
             articleDetail(link) {//查看文章详情
+                this.$ba.trackEvent('hxkj-首页','查看文章详情','link');
                 window.location.href = link;
             },
             consultation() {//咨询
                 if (checkPlatform() == 3) {
+                    this.$ba.trackEvent('hxkj-首页','向我咨询','PC端');
                     window.open('http://wpa.qq.com/msgrd?v=3&uin=337828932&site=在线客服&menu=yes');
                 } else {
+                    this.$ba.trackEvent('hxkj-首页','向我咨询','手机端');
                     window.open('mqqwpa://im/chat?chat_type=wpa&uin=337828932&version=1&src_type=web&web_src=http:://wpa.b.qq.com');
                 }
             },
@@ -242,6 +245,7 @@
             },
             imageClickHandler(event) {
                 if (!this.isCanHover) return;
+                this.$ba.trackEvent('hxkj-首页','hover','talk is cheap,show me the code');
                 var box = this.image.getBoundingClientRect(), top = box.top, left = box.left;
                 this.clickPosition[0] = event.clientX - left;
                 this.clickPosition[1] = event.clientY - top;
