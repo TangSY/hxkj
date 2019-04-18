@@ -212,7 +212,7 @@
         computed: {},
         methods: {
             articleDetail(link) {//查看文章详情
-                this.$ba.trackEvent('hxkj-首页','查看文章详情','link');
+                this.$ba.trackEvent('hxkj-首页','查看文章详情',link);
                 window.location.href = link;
             },
             consultation() {//咨询
@@ -225,6 +225,7 @@
                 }
             },
             onLoad() {
+                /* eslint-disable no-undef */
                 TweenMax.set(this.container, {perspective: 500});
                 this.image = new Image();
                 this.image.onload = () => {
@@ -236,9 +237,11 @@
                 this.isCanHover = true;
                 this.container.appendChild(this.image);
                 if (transitionIn !== false) {
+                    /* eslint-disable no-undef */
                     TweenMax.fromTo(this.image, 0.75, {x: -800, y: 0}, {
                         y: 0,
                         x: 0,
+                        /* eslint-disable no-undef */
                         ease: Elastic.easeOut
                     });
                 }
@@ -294,10 +297,12 @@
                     v[0] = this.clamp(v[0], 0, this.imageWidth);
                     v[1] = this.clamp(v[1], 0, this.imageHeight);
                 });
+                /* eslint-disable no-undef */
                 this.indices = Delaunay.triangulate(this.vertices);
             },
             shatter() {
                 var p0, p1, p2, fragment;
+                /* eslint-disable no-undef */
                 var tl0 = new TimelineMax({onComplete: this.shatterCompleteHandler});
                 for (var i = 0; i < this.indices.length; i += 3) {
                     if (window.CP.shouldStopExecution(3)) {
@@ -312,6 +317,7 @@
                         d = Math.sqrt(dx * dx + dy * dy), rx = 300 * this.sign(dy), ry = 900 * -this.sign(dx),
                         delay = d * 0.003 * this.randomRange(0.1, 0.25);
                     fragment.canvas.style.zIndex = Math.floor(d).toString();
+                    /* eslint-disable no-undef */
                     var tl1 = new TimelineMax();
                     tl1.to(fragment.canvas, this.randomRange(0.25, 1), {
                         z: this.randomRange(-1500, 1500),
@@ -319,6 +325,7 @@
                         rotationY: ry,
                         x: this.randomRange(-2000, 2000),
                         y: this.randomRange(-2000, 2000),
+                        /* eslint-disable no-undef */
                         ease: Expo.easeIn
                     });
                     tl1.to(fragment.canvas, 0.4, {alpha: 0}, 0.6);
