@@ -6,7 +6,7 @@
 */
 <template>
     <div class="container">
-        <top-banner>
+        <top-banner height="650px">
             <div class="title">
                 <span class="special">编程</span>
                 <span>の趣</span>
@@ -61,19 +61,7 @@
             <div class="article">
                 <p class="title">LAST POSTS</p>
                 <p class="subtitle">最新发布的文章</p>
-                <div class="article-list">
-                    <div class="article-item" v-for="(item, index) in articleList" :key="index">
-                        <div class="article-left">
-                            <p class="article-name" @click="articleDetail(item.link)">{{ item.name }}</p>
-                            <div class="article-time">{{ item.time }}</div>
-                            <p class="article-content">{{ item.content }}</p>
-                        </div>
-                        <div class="article-right">
-                            <q-rcode :value="item.link" :options="{ size: 100 }"></q-rcode>
-                            <div class="article-btn" @click="articleDetail(item.link)">阅读全文</div>
-                        </div>
-                    </div>
-                </div>
+                <article-list :articleList="articleList"></article-list>
             </div>
         </div>
         <div class="video">
@@ -117,13 +105,15 @@
 </template>
 
 <script>
-    import QRcode from '@xkeshi/vue-qrcode'
     import {checkPlatform, Fragment} from "../../utils/util";
     import TopBanner from "../common/TopBanner.vue";
+    import ArticleList from "../common/ArticleList.vue";
 
     export default {
         name: "Home",
-        components: {TopBanner, QRcode},
+        components: {
+            ArticleList,
+            TopBanner},
         data() {
             return {
                 skills: [
@@ -168,24 +158,6 @@
                         time: '2018.09.29 09:09',
                         content: '自上一篇遇到webview中没有返回按钮之后，虽然跳出坑了。解决方案：《小程序webview跳转页面后没有返回按钮完美解决方案》 但是，小程序踩...',
                         link: 'https://www.jianshu.com/p/2129d498de19',
-                    },
-                    {
-                        name: '小程序webview跳转页面后没有返回按钮完美解决方案',
-                        time: '2018.09.22 00:17',
-                        content: '随着小程序越来越火爆，使一个产品如果只有公众号H5页面和APP显得不怎么完美，总感觉不搭上小程序这趟流量车，就会少了点什么，心里别扭地很。在此驱...',
-                        link: 'https://www.jianshu.com/p/a7bb1a826548',
-                    },
-                    {
-                        name: '服务器配置https协议，三种免费的方法',
-                        time: '2018.05.29 23:44',
-                        content: '最近想搞一个网站玩玩，发布网站用https协议已经是大势所趋了。例如微信小程序，不使用https协议根本不让接入。所以，分享一下我尝试过的三种方...',
-                        link: 'https://www.jianshu.com/p/eaad77ed1c1b',
-                    },
-                    {
-                        name: 'Android通过外部浏览器调用微信H5支付，Android+PHP详解',
-                        time: '2017.08.16 19:47',
-                        content: '看了好多关于讲解微信H5支付开发的文章，大多数都是通过微信内部浏览器来调用支付接口（其实就是公众号支付），可能是因为H5支付接口刚开放不久吧。微...',
-                        link: 'https://www.jianshu.com/p/e49c8003c0e8',
                     }
                 ],//文章列表
                 TWO_PI: Math.PI * 2,
@@ -211,10 +183,6 @@
         },
         computed: {},
         methods: {
-            articleDetail(link) {//查看文章详情
-                this.$ba.trackEvent('hxkj-首页','查看文章详情',link);
-                window.location.href = link;
-            },
             consultation() {//咨询
                 if (checkPlatform() == 3) {
                     this.$ba.trackEvent('hxkj-首页','向我咨询','PC端');
@@ -527,60 +495,6 @@
                 font-size 18px
                 text-align left
                 font-weight 300
-            }
-            .article-list {
-                margin-top 30px
-                font-size 14px
-                .article-item {
-                    border-radius 5px
-                    margin-bottom 30px
-                    background white
-                    flexAlign()
-                    &:hover {
-                        box-shadow 2px 2px 20px #000
-                    }
-                    .article-left {
-                        padding 20px
-                        border-right 1px dashed vice-font-color
-                        padding-bottom 40px
-                        .article-name {
-                            font-size 20px
-                            cursor pointer
-                            &:hover {
-                                color rgba(1, 32, 81, .8)
-                            }
-                        }
-                        .article-time {
-                            font-size 14px
-                            color vice-font-color
-                            margin-top 5px
-                            margin-bottom 15px
-                        }
-                        .article-content {
-                            line-height 25px
-                            font-weight 400
-                        }
-                    }
-                    .article-right {
-                        width 140px
-                        padding 20px 15px
-                        flexContent()
-                        flex-direction column
-                        .article-btn {
-                            border 1px solid main-color
-                            color main-color
-                            width 80px
-                            padding 2px 0
-                            text-align center
-                            border-radius 5px
-                            cursor pointer
-                            margin-top 10px
-                            &:hover {
-                                background rgba(1, 32, 81, .1)
-                            }
-                        }
-                    }
-                }
             }
         }
     }

@@ -5,7 +5,7 @@
 * @CreateDate:     2019/4/9 21:52
 */
 <template>
-    <div class="top">
+    <div class="top" :style="{height: height}">
         <div class="box">
             <slot>
                 <div class="title">
@@ -28,6 +28,10 @@
             text: {//banner文字
                 type: String,
                 default: ''
+            },
+            height: {//banner高度
+                type: String,
+                default: '350px'
             }
         },
         data() {
