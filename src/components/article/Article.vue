@@ -15,7 +15,7 @@
 
 <script>
     import TopBanner from "../common/TopBanner.vue";
-    import ArticleList from "../common/ArticleList.vue";
+    import ArticleList from "./ArticleList.vue";
 
     export default {
         components: {

@@ -107,7 +107,7 @@
 <script>
     import {checkPlatform, Fragment} from "../../utils/util";
     import TopBanner from "../common/TopBanner.vue";
-    import ArticleList from "../common/ArticleList.vue";
+    import ArticleList from "../article/ArticleList.vue";
 
     export default {
         name: "Home",
