@@ -6,6 +6,7 @@
 */
 <template>
     <div class="article-detail">
+        <top-header :is-detail="true"></top-header>
         <div class="title">{{ article.title }}</div>
         <div class="content" v-html="compileMarkDown(article.markDownContent)"></div>
     </div>
@@ -14,12 +15,14 @@
 <script>
     import hljs from 'highlight.js/lib/highlight';
     import 'highlight.js/styles/atom-one-dark.css';
+    import TopHeader from "../common/TopHeader";
 
     let showdown  = require('showdown');
     let converter = new showdown.Converter();
 
     export default {
         name: "ArticleDetail",
+        components: {TopHeader},
         data() {
             return {
                 article: {
@@ -195,7 +198,7 @@
 
     .article-detail {
         width 700px
-        padding 50px 0px
+        padding 80px 0px
         margin 0 auto
         font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
         font-size 16px

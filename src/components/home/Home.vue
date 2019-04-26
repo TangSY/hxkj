@@ -6,6 +6,7 @@
 */
 <template>
     <div class="container">
+        <top-header></top-header>
         <top-banner height="650px">
             <div class="title">
                 <span class="special">编程</span>
@@ -106,6 +107,7 @@
 
 <script>
     import {checkPlatform, Fragment} from "../../utils/util";
+    import TopHeader from "../common/TopHeader.vue";
     import TopBanner from "../common/TopBanner.vue";
     import ArticleList from "../article/ArticleList.vue";
 
@@ -113,7 +115,9 @@
         name: "Home",
         components: {
             ArticleList,
-            TopBanner},
+            TopHeader,
+            TopBanner
+        },
         data() {
             return {
                 skills: [

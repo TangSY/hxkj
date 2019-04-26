@@ -6,15 +6,17 @@
 */
 <template>
     <div>
+        <top-header></top-header>
         <top-banner :img="bannerImg" text="About me"></top-banner>
     </div>
 </template>
 
 <script>
     import TopBanner from "../common/TopBanner.vue";
+    import TopHeader from "../common/TopHeader";
 
     export default {
-        components: {TopBanner},
+        components: {TopHeader, TopBanner},
         name: "About",
         data() {
             return {

@@ -6,6 +6,7 @@
 */
 <template>
     <div class="container">
+        <top-header></top-header>
         <top-banner :img="bannerImg" text="文集"></top-banner>
         <div class="article-box">
             <article-list :articleList="articleList"></article-list>
@@ -16,9 +17,11 @@
 <script>
     import TopBanner from "../common/TopBanner.vue";
     import ArticleList from "./ArticleList.vue";
+    import TopHeader from "../common/TopHeader";
 
     export default {
         components: {
+            TopHeader,
             ArticleList,
             TopBanner},
         name: "Article",

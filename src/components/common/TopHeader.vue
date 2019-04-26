@@ -6,7 +6,7 @@
 */
 <template>
     <div>
-        <div class="header" :class="{'scroll-down': isShowScroll}">
+        <div class="header" :class="{'scroll-down': isShowScroll || isDetail}">
             <img src="../../assets/logo-white.png" alt="" class="logo" @click="home">
             <div class="menu">
                 <ul>
@@ -23,6 +23,12 @@
 
     export default {
         name: "TopHeader",
+        props: {
+            isDetail: {//是否为详情页
+                type: Boolean,
+                default: false
+            }
+        },
         data() {
             return {
                 menu: [
@@ -47,10 +53,12 @@
                 }
             },
             home() {
-                this.$emit('jump', 'home');
+                this.$ba.trackEvent('hxkj-header', 'nav', 'home');
+                this.$router.push({name: 'home'});
             },
             intoModel(model) {
-                this.$emit('jump', model);
+                this.$ba.trackEvent('hxkj-header', 'nav', model);
+                this.$router.push({name: model});
             }
         }
     }
