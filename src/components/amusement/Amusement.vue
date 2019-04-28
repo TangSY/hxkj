@@ -8,6 +8,7 @@
     <div>
         <top-header></top-header>
         <top-banner :img="bannerImg" text="娱乐"></top-banner>
+        <div class="container">敬请期待~</div>
     </div>
 </template>
 
@@ -34,4 +35,10 @@
 <style lang="stylus" scoped>
     @import "../../style/common.styl"
 
+    .container {
+        width 100%
+        height 800px
+        flexContent()
+        font-size 24px
+    }
 </style>

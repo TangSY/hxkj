@@ -41,7 +41,7 @@
                         <div class="title">Who am I ?</div>
                         <img src="../../assets/head.png" alt="">
                     </div>
-                    <p>我叫唐士瀛，江西吉安人，现居深圳，就职于深圳某互联网公司，任前端工程师。</p>
+                    <p>我叫唐士瀛（TSY），沉迷于程序世界的时候叫HashTang。江西吉安人，现居深圳，就职于深圳某互联网公司，任前端工程师。</p>
                     <p>业余时间化身为一名羽毛球爱好者。</p>
                     <div class="other">
                         <i class="iconfont icon-mi-icon-github"></i>

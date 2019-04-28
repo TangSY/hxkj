@@ -20,9 +20,9 @@ const About = r => require.ensure([], () => r(require('../components/about/About
 
 
 export const routes = [
-    {path: '/', name: 'home', component: Home, meta: {title: '哈希空间-TSY的个人空间'}},
-    {path: '/article', name: 'article', component: Article, meta: {title: '哈希空间-TSY的个人空间'}},
-    {path: '/article/detail', name: 'articleDetail', component: ArticleDetail, meta: {title: '哈希空间-TSY的个人空间'}},
-    {path: '/amusement', name: 'amusement', component: Amusement, meta: {title: 'TSY的娱乐时间'}},
+    {path: '/', name: 'home', component: Home, meta: {title: '哈希空间_HashTang的个人空间-唐士瀛(TSY)'}},
+    {path: '/article', name: 'article', component: Article, meta: {title: '哈希空间_HashTang的个人空间-唐士瀛(TSY)'}},
+    {path: '/article/detail', name: 'articleDetail', component: ArticleDetail, meta: {title: '哈希空间_HashTang的个人空间-唐士瀛(TSY)'}},
+    {path: '/amusement', name: 'amusement', component: Amusement, meta: {title: 'HashTang的娱乐空间'}},
     {path: '/about', name: 'about', component: About, meta: {title: '关于我'}},
 ]
