@@ -24,7 +24,6 @@
     @import "./style/reset.styl";
     @import "./style/boomAnimate.styl";
     #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }

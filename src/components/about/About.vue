@@ -19,9 +19,8 @@
                 </div>
             </div>
             <div class="music">
-                <audio src="//hxkj.vip/dream-it-possible.mp3"
-                       autoplay="autoplay" loop="loop" controls="controls"></audio>
-                <p>Dream It Possible-Delacey</p>
+                <audio src="//hxkj.vip/dream-it-possible.mp3" loop="loop" controls="controls"></audio>
+                <p>Dream it possible-Delacey</p>
             </div>
             <div class="desc">
                 <p class="title">个人经历</p>
@@ -88,18 +87,28 @@
                                 <span>一开始他们找我过去的时候，是让我开发安卓的，因为我毕业后第一份工作就是安卓开发。</span>
                                 <span>但是做了一个多月，发现项目并不合适。然后几个人一合计，又想到了一个新创意，而且意识到APP不易于传播。于是做微信公众号网页开发，
                                     但是这属于前端范畴，与我目前的技术栈不符。这时候其他人就怂恿我：要不你去学一学，刚好这段时间也可以用来好好规划一下项目。我想了想要不就答应了吧，拼一把，现学现用。
-                                    然后我就开始学习前端的相关技术，其他人讨论项目细节，规划项目。大概2个礼拜左右，开始开发了，没错，学了两个礼拜就开始开发项目，现在想想，但是真的是胆大啊！</span>
+                                    然后我就开始学习前端的相关技术，其他人讨论项目细节，规划项目。大概2个礼拜左右，开始开发了，没错，学了两个礼拜就开始开发项目，现在想想，当时真的是胆大啊！</span>
                                 <span>这项目真的就是相当于用来给我练手的，磕磕碰碰，边做边学，边做边百度，花了三个月左右的时间，上线了。看着用户数从0到1K，从1K到1W，从1W到40W。平均日活6万左右。
                                     附一篇当时猎云网的报道：http://kuaibao.qq.com/s/20180306A1GZMC00。项目名称【全民种水果】，感兴趣的可以百度试试，当然由于资金链断裂的原因，现在搜索到的用户投诉会比较多，哈哈哈！</span>
                                 <span>期间经历了高并发带来的服务器宕机，用户基数大带来的用户机型适配问题。所以，缓存架构，消息队列，适配方案都摸了个遍，勉强撑住了这日益增长的用户数。</span>
                                 <span>然而，好景不长，互联网寒冬带来的资金链断裂导致我们团队宣布解散，大家都说休息休息，缓缓神。毕竟这一年太拼了，一直都是在高强度工作中度过，996是常态，
                                     有段时间更是达到了9117。当然，给我带来的提升也是巨大的。</span>
-                                <span>目前的我，就职于一家互联网公司，坐标深圳。带带新人，在完成工作任务之外，研究研究新技术，写写博客之类的。</span>
+                                <span>目前的我，就职于一家互联网公司，坐标深圳。带带新人（其实就是误人子弟），在完成工作任务之外，研究研究新技术，写写博客之类的。</span>
                             </p>
                         </li>
                     </ul>
                 </div>
-                <p>未完待续~</p>
+                <p class="title">关于本站</p>
+                <div class="content">
+                    <ul>
+                        <li>
+                            <p>
+                                <span>本站的域名【hxkj.vip】。来源于我之前倒卖域名的时候抢注的四声域名，去年（2018年）打算做网站的时候，从中挑了一个。</span>
+                                <span>本站的名称【哈希空间】。哈希，英文单词hash，做程序员的都懂哈。空间，意为个人空间，用于记录自己的点点滴滴。同时通过逛我的空间，能让其他人有所收获，那就再好不过了。</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -175,17 +184,18 @@
                 margin-top 15px
                 ul {
                     li {
-                        margin 10px 0
+                        margin 20px 0
                         label {
                             color orange-color
                             font-size 18px
                         }
                         p {
+                            margin-left 15px
                             font-size 14px
                             display flex
                             flex-direction column
                             span {
-                                margin-top 5px
+                                margin-top 10px
                             }
                         }
                     }
