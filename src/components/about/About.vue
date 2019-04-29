@@ -167,6 +167,23 @@
             width 100%
             text-align center
             margin 80px auto
+            padding 50px 0
+            border 1px dashed bg-color
+            border-radius 5px
+            &:hover {
+                border-width 2px
+                border-color main-color
+                position relative
+                &:before {
+                    content "不妨听首小曲？"
+                    position absolute
+                    top 10px
+                    left 10px
+                    font-size 12px
+                    color main-color
+                    font-weight bold
+                }
+            }
             p {
                 margin-top 5px
                 color vice-font-color
