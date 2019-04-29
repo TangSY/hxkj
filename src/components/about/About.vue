@@ -138,10 +138,11 @@
     @import "../../style/common.styl"
 
     .container {
-        width 800px
+        max-width 800px
         margin 50px auto
         .me {
             flexBetween()
+            flex-wrap wrap
             font-size 60px
             .info {
                 align-self flex-start

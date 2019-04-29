@@ -32,6 +32,7 @@
         data() {
             return {
                 menu: [
+                    {name: '首页', model: 'home'},
                     {name: '文集', model: 'article'},
                     {name: '娱乐', model: 'amusement'},
                     {name: '关于', model: 'about'}

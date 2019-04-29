@@ -452,6 +452,9 @@
                         margin 30px 0
                         border-radius 50%
                         box-shadow 2px 2px 20px #fff
+                        &:hover {
+                            box-shadow 4px 4px 40px #fff
+                        }
                     }
                 }
                 .other {
