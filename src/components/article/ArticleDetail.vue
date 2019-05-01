@@ -176,18 +176,23 @@
         },
         mounted() {
             this.highlightCode();
+
+            this.getDetail();
         },
         computed: {},
         methods: {
             compileMarkDown(content) {
                 return converter.makeHtml(content)
             },
-            highlightCode() {
+            highlightCode() {//高亮代码
                 const preEl = document.querySelectorAll('pre');
 
                 preEl.forEach((el) => {
                     hljs.highlightBlock(el)
                 })
+            },
+            getDetail() { //获取文章详情数据
+
             }
         }
     }
