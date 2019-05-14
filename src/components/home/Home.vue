@@ -106,6 +106,7 @@
 </template>
 
 <script>
+    import * as api from '../../constant/api';
     import {checkPlatform, Fragment} from "../../utils/util";
     import TopHeader from "../common/TopHeader.vue";
     import TopBanner from "../common/TopBanner.vue";
@@ -187,6 +188,10 @@
         },
         computed: {},
         methods: {
+            async getArticleList() {
+                let data = await this.$axios('post',api.GET_ARTICLE_LIST,'');
+                console.log(data);
+            },
             consultation() {//咨询
                 if (checkPlatform() == 3) {
                     this.$ba.trackEvent('hxkj-首页','向我咨询','PC端');

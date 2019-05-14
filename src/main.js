@@ -12,10 +12,12 @@ import axios from './http'
 import Qs from 'qs'
 //通过配置router参数，设置页面标题
 import VueWechatTitle from 'vue-wechat-title'
+
 Vue.use(VueWechatTitle)
 
 //引入百度统计插件
 import ba from 'vue-ba'
+
 Vue.use(ba, 'b0668f30d62e1597bdb36d05edea8960')
 
 
@@ -25,21 +27,25 @@ import {imageIsExist} from "./utils/util";
 Vue.config.productionTip = false
 
 //普通axios请求
-Vue.prototype.$axios = (method, url, params, callback) => {
-    axios({
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        method: method || 'post',
-        url: url,
-        data: Qs.stringify(params),
-        withCredentials: true
-    }).then(function (data) {
-        callback(data.data)
-    }).catch(function (err) {
-        console.log(err)
-        console.log({position: 'bottom', message: '网络错误，请稍后再试！'});
-    })
+Vue.prototype.$axios = (method, url, params) => {
+    return new Promise((resolve, reject) => {
+            axios({
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                method: method || 'post',
+                url: url,
+                data: Qs.stringify(params),
+                withCredentials: true
+            }).then(function (data) {
+                resolve(data.data)
+            }).catch(function (err) {
+                reject(err);
+                console.log(err);
+                console.log({position: 'bottom', message: '网络错误，请稍后再试！'});
+            })
+        }
+    )
 };
 //axios上传文件
 Vue.prototype.$axiosUpload = (url, params, callback) => {
