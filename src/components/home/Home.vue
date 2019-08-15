@@ -100,7 +100,7 @@
         </div>
         <div class="content">
             <div id="imgContainer" @mouseover="imageClickHandler"></div>
-            <span class="says">-- Linus</span>
+            <span class="says">-- 何秀霞</span>
         </div>
     </div>
 </template>

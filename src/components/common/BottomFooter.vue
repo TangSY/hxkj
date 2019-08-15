@@ -15,7 +15,7 @@
             </div>
             <div class="wechat">
                 <img src="../../assets/qr-code.jpg" alt="">
-                <p>扫码加我微信</p>
+                <p>不许加我微信</p>
             </div>
         </div>
     </div>
