@@ -5,10 +5,11 @@
 * @CreateDate:     2019/4/9 21:44
 */
 <template>
-    <div>
+    <div class="box">
         <top-header></top-header>
         <top-banner :img="bannerImg" text="娱乐"></top-banner>
         <div class="container">敬请期待~</div>
+        <canvas id="cat" width="500" height="500"></canvas>
     </div>
 </template>
 
@@ -25,7 +26,7 @@
             }
         },
         mounted() {
-
+            loadlive2d("cat", "https://www.hxkj.vip/tororo.model.json");
         },
         computed: {},
         methods: {}
@@ -35,10 +36,20 @@
 <style lang="stylus" scoped>
     @import "../../style/common.styl"
 
-    .container {
+    .box {
         width 100%
-        height 800px
-        flexContent()
-        font-size 24px
+        position relative
+        .container {
+            width 100%
+            height 800px
+            flexContent()
+            font-size 24px
+        }
+        #cat {
+            position absolute
+            bottom 0
+            right 0
+        }
     }
+
 </style>
