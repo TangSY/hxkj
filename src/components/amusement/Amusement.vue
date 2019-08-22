@@ -26,7 +26,7 @@
             }
         },
         mounted() {
-            loadlive2d("cat", "https://www.hxkj.vip/tororo.model.json");
+            loadlive2d("cat", "/tororo.model.json");
         },
         computed: {},
         methods: {}
