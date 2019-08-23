@@ -26,7 +26,26 @@
             }
         },
         mounted() {
-            loadlive2d("cat", "/tororo.model.json");
+            loadlive2d("cat",  {
+                "version": "Sample 1.0.0",
+                "model": "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/moc/tororo.moc",
+                "textures": ["https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/moc/tororo.2048/texture_00.png"],
+                "pose": "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/tororo.pose.json",
+                "name": "tororo",
+                "motions": {
+                    "idle": [{"file": "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/mtn/00_idle.mtn"}],
+                    "": [
+                        {"file": "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/mtn/01.mtn"},
+                        {"file": "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/mtn/02.mtn"},
+                        {"file": "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/mtn/03.mtn"},
+                        {"file": "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/mtn/04.mtn"},
+                        {"file": "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/mtn/05.mtn"},
+                        {"file": "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/mtn/06.mtn"},
+                        {"file": "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/mtn/07.mtn"},
+                        {"file": "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/mtn/08.mtn"}
+                    ]
+                }
+            });
         },
         computed: {},
         methods: {}
