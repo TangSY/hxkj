@@ -26,7 +26,7 @@
             }
         },
         mounted() {
-            loadlive2d("cat",  "/tororo.model.json");
+            loadlive2d("cat",  "/live2d/tororo.model.json");
         },
         computed: {},
         methods: {}
