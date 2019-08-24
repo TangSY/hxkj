@@ -135,6 +135,12 @@
                 ],
                 articleList: [
                     {
+                        name: 'vue-hash-calendar，移动端日期时间选择插件（使用篇）',
+                        time: '2019.06.26 00:45',
+                        content: '按照惯例，先上效果图 vue-hash-calendar 基于 vue 2.X 开发的日历组件 支持手势滑动操作 原生 js 开发，没引入第三方...',
+                        link: 'https://www.jianshu.com/p/c088746157a8',
+                    },
+                    {
                         name: 'Github配合Jenkins，实现vue等前端项目的自动构建与发布',
                         time: '2019.03.23 23:55',
                         content: '本篇文章前端项目以vue为例（其实前端工程化项目的操作方法都相同），部署在Linux系统上（centos）。之前做前端项目的部署，一直都是手动运行打包命令...',
@@ -157,12 +163,6 @@
                         time: '2018.11.04 20:19',
                         content: '首先，来看下效果图 可以看出，这个列表有三种展现形式： 1.第一层级中包含直属子项和第二层级，其中第二层级里包含子项2.第一层级中只包含第二层级...',
                         link: 'https://www.jianshu.com/p/154ffc0abed4',
-                    },
-                    {
-                        name: '小程序webview调用微信扫一扫的“曲折”思路',
-                        time: '2018.09.29 09:09',
-                        content: '自上一篇遇到webview中没有返回按钮之后，虽然跳出坑了。解决方案：《小程序webview跳转页面后没有返回按钮完美解决方案》 但是，小程序踩...',
-                        link: 'https://www.jianshu.com/p/2129d498de19',
                     }
                 ],//文章列表
                 TWO_PI: Math.PI * 2,

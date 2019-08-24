@@ -30,6 +30,12 @@
                 bannerImg: require('../../assets/article-banner.jpg'),//banner图
                 articleList: [
                     {
+                        name: 'vue-hash-calendar，移动端日期时间选择插件（使用篇）',
+                        time: '2019.06.26 00:45',
+                        content: '按照惯例，先上效果图 vue-hash-calendar 基于 vue 2.X 开发的日历组件 支持手势滑动操作 原生 js 开发，没引入第三方...',
+                        link: 'https://www.jianshu.com/p/c088746157a8',
+                    },
+                    {
                         name: 'Github配合Jenkins，实现vue等前端项目的自动构建与发布',
                         time: '2019.03.23 23:55',
                         content: '本篇文章前端项目以vue为例（其实前端工程化项目的操作方法都相同），部署在Linux系统上（centos）。之前做前端项目的部署，一直都是手动运行打包命令...',
