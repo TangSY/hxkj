@@ -8,7 +8,7 @@
     <div class="box">
         <top-header></top-header>
         <top-banner :img="bannerImg" text="娱乐"></top-banner>
-        <div class="container">敬请期待~</div>
+        <div class="container">快看，右下角有只猫</div>
         <canvas id="cat" width="500" height="500"></canvas>
     </div>
 </template>
