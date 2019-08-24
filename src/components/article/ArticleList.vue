@@ -39,7 +39,7 @@
         methods: {
             articleDetail(link) {//查看文章详情
                 this.$ba.trackEvent('hxkj-首页','查看文章详情',link);
-                window.location.href = link;
+                window.open(link);
             }
         }
     }
