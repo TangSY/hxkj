@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@xkeshi/vue-qrcode": "github:xkeshi/vue-qrcode",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "highlight.js": "^9.15.6",
     "qs": "^6.6.0",
     "showdown": "^1.9.0",
