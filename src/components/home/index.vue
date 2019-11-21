@@ -108,12 +108,12 @@
 <script>
     import * as api from '../../constant/api';
     import {checkPlatform, Fragment} from "../../utils/util";
-    import TopHeader from "../common/TopHeader.vue";
-    import TopBanner from "../common/TopBanner.vue";
-    import ArticleList from "../article/ArticleList.vue";
+    import TopHeader from "../common/TopHeader";
+    import TopBanner from "../common/TopBanner";
+    import ArticleList from "../article/articleList";
 
     export default {
-        name: "Home",
+        name: "home",
         components: {
             ArticleList,
             TopHeader,

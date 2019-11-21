@@ -19,7 +19,7 @@
 
 <script>
 
-    import {throttle} from "../../utils/util";
+    import { throttle } from "../../utils/util";
 
     export default {
         name: "TopHeader",
@@ -34,6 +34,7 @@
                 menu: [
                     {name: '首页', model: 'home'},
                     {name: '文集', model: 'article'},
+                    {name: '收藏', model: 'collect'},
                     {name: '娱乐', model: 'amusement'},
                     {name: '关于', model: 'about'}
                 ],//菜单

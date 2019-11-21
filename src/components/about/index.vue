@@ -31,7 +31,7 @@
 </template>
 
 <script>
-    import TopBanner from "../common/TopBanner.vue";
+    import TopBanner from "../common/TopBanner";
     import TopHeader from "../common/TopHeader";
 
     export default {

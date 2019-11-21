@@ -6,23 +6,27 @@
  */
 
 //首页
-const Home = r => require.ensure([], () => r(require('../components/home/Home')), 'home');
+const home = r => require.ensure([], () => r(require('../components/home')), 'home');
 
 //文集
-const Article = r => require.ensure([], () => r(require('../components/article/Article')), 'article');
-const ArticleDetail = r => require.ensure([], () => r(require('../components/article/ArticleDetail')), 'article');
+const article = r => require.ensure([], () => r(require('../components/article')), 'article');
+const articleDetail = r => require.ensure([], () => r(require('../components/article/articleDetail')), 'article');
 
 //娱乐
-const Amusement = r => require.ensure([], () => r(require('../components/amusement/Amusement')), 'amusement');
+const collect = r => require.ensure([], () => r(require('../components/collect')), 'collect');
+
+//娱乐
+const amusement = r => require.ensure([], () => r(require('../components/amusement')), 'amusement');
 
 //关于
-const About = r => require.ensure([], () => r(require('../components/about/About')), 'about');
+const about = r => require.ensure([], () => r(require('../components/about')), 'about');
 
 
 export const routes = [
-    {path: '/', name: 'home', component: Home, meta: {title: '哈希空间_HashTang的个人空间-唐士瀛(TSY)'}},
-    {path: '/article', name: 'article', component: Article, meta: {title: '哈希空间_HashTang的个人空间-唐士瀛(TSY)'}},
-    {path: '/article/detail', name: 'articleDetail', component: ArticleDetail, meta: {title: '哈希空间_HashTang的个人空间-唐士瀛(TSY)'}},
-    {path: '/amusement', name: 'amusement', component: Amusement, meta: {title: 'HashTang的娱乐空间'}},
-    {path: '/about', name: 'about', component: About, meta: {title: '关于我'}},
+    {path: '/', name: 'home', component: home, meta: {title: '哈希空间_HashTang的个人空间-唐士瀛(TSY)'}},
+    {path: '/article', name: 'article', component: article, meta: {title: '哈希空间_HashTang的个人空间-唐士瀛(TSY)'}},
+    {path: '/article/detail', name: 'articleDetail', component: articleDetail, meta: {title: '哈希空间_HashTang的个人空间-唐士瀛(TSY)'}},
+    {path: '/amusement', name: 'amusement', component: amusement, meta: {title: 'HashTang的娱乐空间'}},
+    {path: '/collect', name: 'collect', component: collect, meta: {title: 'HashTang的收藏室'}},
+    {path: '/about', name: 'about', component: about, meta: {title: '关于我'}},
 ]

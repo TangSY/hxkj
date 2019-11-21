@@ -15,8 +15,8 @@
 </template>
 
 <script>
-    import TopBanner from "../common/TopBanner.vue";
-    import ArticleList from "./ArticleList.vue";
+    import TopBanner from "../common/TopBanner";
+    import ArticleList from "./articleList";
     import TopHeader from "../common/TopHeader";
 
     export default {
