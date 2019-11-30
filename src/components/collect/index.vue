@@ -43,96 +43,6 @@
                 siteList: [
                     {
                         "icon": "",
-                        "title": "写论文必备",
-                        "list": [
-                            {
-                                "icon": "/collect/0.png",
-                                "url": "http://sci-hub.tw/",
-                                "name": "Sci Hub",
-                                "desc": "各种不能下的论文都能免费下"
-                            },
-                            {
-                                "icon": "/collect/1.png",
-                                "url": "http://www.cnki.net/",
-                                "name": "中国知网",
-                                "desc": "提供一般学术论文下载 需在校"
-                            },
-                            {
-                                "icon": "/collect/2.png",
-                                "url": "http://muchong.com/bbs/",
-                                "name": "小木虫论坛",
-                                "desc": "大多是论文交流"
-                            },
-                            {
-                                "icon": "/collect/3.png",
-                                "url": "http://www.paperfree.cn/",
-                                "name": "PaperFree",
-                                "desc": "初步查重，可以免费1W字论文查重，支持机器修改重复"
-                            },
-                            {
-                                "icon": "/collect/4.png",
-                                "url": "http://www.paperpass.com/",
-                                "name": "PaperPass",
-                                "desc": "专业论文查重"
-                            },
-                            {
-                                "icon": "/collect/5.png",
-                                "url": "http://xueshu.baidu.com/",
-                                "name": "百度学术",
-                                "desc": "百度官方论文下载平台"
-                            },
-                            {
-                                "icon": "/collect/6.png",
-                                "url": "http://www.clcindex.com/",
-                                "name": "中图分类号查询",
-                                "desc": "中图分类号，如计算机一般为TP391"
-                            },
-                            {
-                                "icon": "/collect/7.png",
-                                "url": "http://www.udcsummary.info/php/index.php?lang=chi",
-                                "name": "国际图书分类号查询",
-                                "desc": "国图查询官网，例如U.D.C 681.3"
-                            },
-                            {
-                                "icon": "/collect/8.png",
-                                "url": "http://fanyi.baidu.com/",
-                                "name": "百度翻译",
-                                "desc": "快速理解外文文献 语言少 翻译一般"
-                            },
-                            {
-                                "icon": "/collect/9.png",
-                                "url": "https://translate.google.com",
-                                "name": "谷歌翻译",
-                                "desc": "需要梯子 神经网络翻译 支持更多语言"
-                            },
-                            {
-                                "icon": "/collect/10.png",
-                                "url": "https://translate.google.cn",
-                                "name": "谷歌翻译（中国区）",
-                                "desc": "在线翻译 可直连 不清楚和官网的差异"
-                            },
-                            {
-                                "icon": "/collect/11.png",
-                                "url": "http://ac.scmor.com/",
-                                "name": "谷歌学术镜像",
-                                "desc": "提供大量谷歌学术/网页搜索镜像网址，速度较慢，救急用"
-                            },
-                            {
-                                "icon": "/collect/12.png",
-                                "url": "http://www.6453.net/",
-                                "name": "龙猫学术",
-                                "desc": "百度文库 / 谷歌学术 / BBS / 专利 / 科研工具"
-                            },
-                            {
-                                "icon": "/collect/13.png",
-                                "url": "http://sande100.cn/baidu/",
-                                "name": "百度文库文档提取",
-                                "desc": "免费提取，效果一般，建议临时使用"
-                            }
-                        ]
-                    },
-                    {
-                        "icon": "",
                         "title": "编程实战练习",
                         "list": [
                             {
@@ -274,6 +184,12 @@
                         "title": "设计素材（通用）",
                         "list": [
                             {
+                                "icon": "/collect/gaoding.png",
+                                "url": "https://ps.gaoding.com/",
+                                "name": "稿定设计",
+                                "desc": "在线ps,ps网页版,ps在线图片处理"
+                            },
+                            {
                                 "icon": "/collect/34.png",
                                 "url": "http://www.zcool.com.cn/",
                                 "name": "站酷",
@@ -386,6 +302,12 @@
                                 "url": "http://www.uugai.com/",
                                 "name": "U钙网",
                                 "desc": "免费LOGO制作 无需注册帐号"
+                            },
+                            {
+                                "icon": "/collect/logosc.png",
+                                "url": "https://www.logosc.cn",
+                                "name": "智能LOGO生成",
+                                "desc": "人工智能为您在线制作LOGO，设计名片，打造完整品牌VI"
                             },
                             {
                                 "icon": "/collect/53.png",
@@ -562,12 +484,6 @@
                                 "desc": "上传图片/文字能自动生成字符组成的图案"
                             },
                             {
-                                "icon": "/collect/80.png",
-                                "url": "http://tool.uixsj.cn/",
-                                "name": "现实君工具箱",
-                                "desc": "有趣的在线工具 编程/整人/API等等"
-                            },
-                            {
                                 "icon": "/collect/81.png",
                                 "url": "http://www.anycodes.cn/zh/",
                                 "name": "AnyCode",
@@ -733,42 +649,6 @@
                     },
                     {
                         "icon": "",
-                        "title": "学校常用",
-                        "list": [
-                            {
-                                "icon": "/collect/106.png",
-                                "url": "https://vpn.hit.edu.cn/dana-na/auth/url_default/welcome.cgi",
-                                "name": "哈工大校内VPN服务",
-                                "desc": "校外访问校内网站"
-                            },
-                            {
-                                "icon": "/collect/107.png",
-                                "url": "http://www.chsi.com.cn/",
-                                "name": "学信网",
-                                "desc": "查学籍 查学历 查四六级"
-                            },
-                            {
-                                "icon": "/collect/108.png",
-                                "url": "http://ids.hit.edu.cn/authserver/login",
-                                "name": "哈工大信息门户",
-                                "desc": "选修课程 毕业设计"
-                            },
-                            {
-                                "icon": "/collect/109.png",
-                                "url": "https://mail.std.uestc.edu.cn",
-                                "name": "电子科技大学邮箱",
-                                "desc": "终身@std.uestc.edu.cn邮箱 不区分毕业生"
-                            },
-                            {
-                                "icon": "/collect/110.png",
-                                "url": "https://mail.std.uestc.edu.cn/",
-                                "name": "UESTC 新邮箱",
-                                "desc": "UESTC 全国统一邮箱"
-                            }
-                        ]
-                    },
-                    {
-                        "icon": "",
                         "title": "音乐 / 电影 / 番剧 / 种子资源",
                         "list": [
                             {
@@ -901,55 +781,91 @@
                     },
                     {
                         "icon": "",
-                        "title": "失效链接（万一哪天又好了呢~）",
+                        "title": "写论文必备",
                         "list": [
                             {
-                                "icon": "/collect/128.png",
-                                "url": "http://canvas.qq.com/index",
-                                "name": "瓦斯平台",
-                                "desc": "拖动模板构建自己的图片 腾讯基于HTML5的canvas开发的"
+                                "icon": "/collect/0.png",
+                                "url": "http://sci-hub.tw/",
+                                "name": "Sci Hub",
+                                "desc": "各种不能下的论文都能免费下"
                             },
                             {
-                                "icon": "/collect/129.png",
-                                "url": "http://www.bdysou.com/",
-                                "name": "bdy搜",
-                                "desc": "搜索百度网盘资源"
+                                "icon": "/collect/1.png",
+                                "url": "http://www.cnki.net/",
+                                "name": "中国知网",
+                                "desc": "提供一般学术论文下载 需在校"
                             },
                             {
-                                "icon": "/collect/130.png",
-                                "url": "http://47.95.226.123/wenku/",
-                                "name": "百度文库下载",
-                                "desc": "还原效果一般"
+                                "icon": "/collect/2.png",
+                                "url": "http://muchong.com/bbs/",
+                                "name": "小木虫论坛",
+                                "desc": "大多是论文交流"
                             },
                             {
-                                "icon": "/collect/131.png",
-                                "url": "https://www.52ml.net/categories/machinelearning",
-                                "name": "我爱机器学习",
-                                "desc": "机器学习干货站"
+                                "icon": "/collect/3.png",
+                                "url": "http://www.paperfree.cn/",
+                                "name": "PaperFree",
+                                "desc": "初步查重，可以免费1W字论文查重，支持机器修改重复"
                             },
                             {
-                                "icon": "/collect/132.png",
-                                "url": "http://www.pan66.com",
-                                "name": "特多盘",
-                                "desc": "百度网盘资源搜索"
+                                "icon": "/collect/4.png",
+                                "url": "http://www.paperpass.com/",
+                                "name": "PaperPass",
+                                "desc": "专业论文查重"
                             },
                             {
-                                "icon": "/collect/133.png",
-                                "url": "http://www.sg80.com",
-                                "name": "87福利电影网",
-                                "desc": "美剧 综艺 下架番 电影"
+                                "icon": "/collect/5.png",
+                                "url": "http://xueshu.baidu.com/",
+                                "name": "百度学术",
+                                "desc": "百度官方论文下载平台"
                             },
                             {
-                                "icon": "/collect/134.png",
-                                "url": "http://tv.dsqndh.com/",
-                                "name": "屌丝青年导航",
-                                "desc": "VIP视频解析 腾奇优芒狐乐土AB 56 音悦Tai"
+                                "icon": "/collect/6.png",
+                                "url": "http://www.clcindex.com/",
+                                "name": "中图分类号查询",
+                                "desc": "中图分类号，如计算机一般为TP391"
                             },
                             {
-                                "icon": "/collect/135.png",
-                                "url": "http://www.autojcode.com/",
-                                "name": "AutoJCode",
-                                "desc": "在线用SQL或GUI界面生成DO类"
+                                "icon": "/collect/7.png",
+                                "url": "http://www.udcsummary.info/php/index.php?lang=chi",
+                                "name": "国际图书分类号查询",
+                                "desc": "国图查询官网，例如U.D.C 681.3"
+                            },
+                            {
+                                "icon": "/collect/8.png",
+                                "url": "http://fanyi.baidu.com/",
+                                "name": "百度翻译",
+                                "desc": "快速理解外文文献 语言少 翻译一般"
+                            },
+                            {
+                                "icon": "/collect/9.png",
+                                "url": "https://translate.google.com",
+                                "name": "谷歌翻译",
+                                "desc": "需要梯子 神经网络翻译 支持更多语言"
+                            },
+                            {
+                                "icon": "/collect/10.png",
+                                "url": "https://translate.google.cn",
+                                "name": "谷歌翻译（中国区）",
+                                "desc": "在线翻译 可直连 不清楚和官网的差异"
+                            },
+                            {
+                                "icon": "/collect/11.png",
+                                "url": "http://ac.scmor.com/",
+                                "name": "谷歌学术镜像",
+                                "desc": "提供大量谷歌学术/网页搜索镜像网址，速度较慢，救急用"
+                            },
+                            {
+                                "icon": "/collect/12.png",
+                                "url": "http://www.6453.net/",
+                                "name": "龙猫学术",
+                                "desc": "百度文库 / 谷歌学术 / BBS / 专利 / 科研工具"
+                            },
+                            {
+                                "icon": "/collect/13.png",
+                                "url": "http://sande100.cn/baidu/",
+                                "name": "百度文库文档提取",
+                                "desc": "免费提取，效果一般，建议临时使用"
                             }
                         ]
                     },
@@ -958,10 +874,28 @@
                         "title": "其他",
                         "list": [
                             {
+                                "icon": "/collect/mvyxws.png",
+                                "url": "https://www.mvyxws.com/",
+                                "name": "医学微视",
+                                "desc": "一个以视频的方式分享各种医学知识的良心网站"
+                            },
+                            {
+                                "icon": "/collect/xiangdang.png",
+                                "url": "https://www.xiangdang.net/",
+                                "name": "香当网",
+                                "desc": "工作总结,个人工作总结,工作计划,述职报告,范文,论文"
+                            },
+                            {
                                 "icon": "/collect/136.png",
                                 "url": "http://www.77music.com/",
                                 "name": "弹琴吧",
                                 "desc": "钢琴谱大全"
+                            },
+                            {
+                                "icon": "/collect/geojson.png",
+                                "url": "http://geojson.io/",
+                                "name": "geojson 数据生成",
+                                "desc": "自定义地图，geojson 数据生成，可用于 echarts 等图表插件"
                             },
                             {
                                 "icon": "/collect/137.png",
@@ -1058,6 +992,7 @@
                             width 32px
                             height 32px
                             border-radius 50%
+                            background bg-color
                             margin-right 15px
                         }
 
