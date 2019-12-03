@@ -880,6 +880,12 @@
                                 "desc": "一个以视频的方式分享各种医学知识的良心网站"
                             },
                             {
+                                "icon": "/collect/wolframalpha.png",
+                                "url": "https://www.wolframalpha.com",
+                                "name": "wolframalpha",
+                                "desc": "数学公式计算，支持方程、导数、高阶导数、微积分等各种复杂科学计算"
+                            },
+                            {
                                 "icon": "/collect/xiangdang.png",
                                 "url": "https://www.xiangdang.net/",
                                 "name": "香当网",
