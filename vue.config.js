@@ -8,7 +8,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     productionSourceMap: false,//生产环境中关掉sourceMap
-    baseUrl: process.env.NODE_ENV === 'production' ? './' : '/',
+    baseUrl: './',
     devServer: {
         port: 80,
         proxy: {
