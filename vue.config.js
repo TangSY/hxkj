@@ -12,12 +12,13 @@ module.exports = {
     devServer: {
         port: 80,
         proxy: {
-            '/tsy': {
-                target: 'http://hxkj.vip/',//设置调用的接口域名和端口号
+            '/api': {
+                // target: 'http://hxkj.vip/',//设置调用的接口域名和端口号
+                target: 'http://localhost:3000/',//设置调用的接口域名和端口号
                 changeOrigin: true,
                 ws: true,
                 pathRewrite: {
-                    '^/tsy': ''
+                    '^/api/api': ''
                 }
             }
         }

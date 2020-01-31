@@ -9,7 +9,7 @@ import axios from 'axios'
 
 // axios 配置
 axios.defaults.timeout = 5000;
-axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? '/' : '/tsy';
+axios.defaults.baseURL = '/api';
 
 // http request 拦截器
 axios.interceptors.request.use(

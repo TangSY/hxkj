@@ -21,22 +21,40 @@
 </template>
 
 <script>
+    import * as api from "../../constant/api"
     import QRcode from '@xkeshi/vue-qrcode'
 
     export default {
         components: {QRcode},
         name: "ArticleList",
-        props: ['articleList'],
+        props: {
+            // 组件的位置
+            from: {
+                type: String,
+                default: 'article'
+            }
+        },
         data() {
-            return {}
+            return {
+                articleList: [],//文章列表
+            }
         },
         mounted() {
-
+            this.getArticleList();
         },
         computed: {
 
         },
         methods: {
+            async getArticleList() {
+                let data = await this.$axios('get', api.GET_ARTICLE_LIST);
+                                
+                this.articleList = data || [];
+
+                if (this.from === 'index') {
+                    this.articleList = this.articleList.slice(5);
+                }
+            },
             articleDetail(link) {//查看文章详情
                 this.$ba.trackEvent('hxkj-首页','查看文章详情',link);
                 window.open(link);

@@ -7,3 +7,6 @@
 
 //获取文章列表
 export const GET_ARTICLE_LIST = 'api/article/getArticleList';
+
+//获取收藏网站列表
+export const GET_COLLECT_LIST = 'api/collect/getCollectList';

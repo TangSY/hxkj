@@ -62,7 +62,7 @@
             <div class="article">
                 <p class="title">LAST POSTS</p>
                 <p class="subtitle">最新发布的文章</p>
-                <article-list :articleList="articleList"></article-list>
+                <article-list from="index"></article-list>
             </div>
         </div>
         <div class="video">
@@ -133,38 +133,6 @@
                     {progress: '70%', name: 'Linux'},
                     {progress: '80%', name: 'Java'}
                 ],
-                articleList: [
-                    {
-                        name: 'vue-hash-calendar，移动端日期时间选择插件（使用篇）',
-                        time: '2019.06.26 00:45',
-                        content: '按照惯例，先上效果图 vue-hash-calendar 基于 vue 2.X 开发的日历组件 支持手势滑动操作 原生 js 开发，没引入第三方...',
-                        link: 'https://www.jianshu.com/p/c088746157a8',
-                    },
-                    {
-                        name: 'Github配合Jenkins，实现vue等前端项目的自动构建与发布',
-                        time: '2019.03.23 23:55',
-                        content: '本篇文章前端项目以vue为例（其实前端工程化项目的操作方法都相同），部署在Linux系统上（centos）。之前做前端项目的部署，一直都是手动运行打包命令...',
-                        link: 'https://www.jianshu.com/p/4c4f92209dd1'
-                    },
-                    {
-                        name: 'vue自定义指令，比onerror更优雅的方式实现当图片加载失败时使用默认图，提供三种方法',
-                        time: '2019.03.17 21:13',
-                        content: '首先，来看下效果图（演示一下图片正常加载与加载失败时的效果） 一、常规方法解决 我们都知道，img标签支持onerror事件，在装载文档或图像的...',
-                        link: 'https://www.jianshu.com/p/394c487d81d7'
-                    },
-                    {
-                        name: 'echarts地图边界数据的实时获取与应用，省市区县多级联动【附最新geoJson文件下载】',
-                        time: '2019.02.24 22:28',
-                        content: '首先，来看下效果图 在线体验地址：https://hxkj.vip/demo/echartsMap/，并提供实时geoJson数据文件下载 前段...',
-                        link: 'https://www.jianshu.com/p/c293c94d9ab7',
-                    },
-                    {
-                        name: 'vue多级复杂列表展开/折叠，全选/分组全选实现',
-                        time: '2018.11.04 20:19',
-                        content: '首先，来看下效果图 可以看出，这个列表有三种展现形式： 1.第一层级中包含直属子项和第二层级，其中第二层级里包含子项2.第一层级中只包含第二层级...',
-                        link: 'https://www.jianshu.com/p/154ffc0abed4',
-                    }
-                ],//文章列表
                 TWO_PI: Math.PI * 2,
                 urls: [require('../../assets/talk.png')],
                 image: null,
