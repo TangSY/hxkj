@@ -6,7 +6,7 @@
  */
 
 //获取文章列表
-export const GET_ARTICLE_LIST = 'api/article/getArticleList';
+export const GET_ARTICLE_LIST = 'article/getArticleList';
 
 //获取收藏网站列表
-export const GET_COLLECT_LIST = 'api/collect/getCollectList';
+export const GET_COLLECT_LIST = 'collect/getCollectList';
