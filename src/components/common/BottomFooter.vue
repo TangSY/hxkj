@@ -11,11 +11,11 @@
                 <img src="../../assets/domain.png" alt="">
                 <p>© 2017-{{ year }} hxkj. All rights reserved. </p>
                 <p>本站内容未经许可，不允许转载</p>
-                <p class="check" @click="checkBeian">粤ICP备18063378号-1</p>
+                <p class="check" @click="checkBeian">粤ICP备18063378号</p>
             </div>
             <div class="wechat">
                 <img src="../../assets/qr-code.jpg" alt="">
-                <p>想加微信吗？</p>
+                <p>扫一扫添加微信</p>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
         methods: {
             checkBeian() {
                 this.$ba.trackEvent('hxkj-footer', 'click', '查询备案信息');
-                window.open('http://www.beian.miit.gov.cn/publish/query/indexFirst.action');
+                window.open('http://www.beian.miit.gov.cn');
             }
         }
     }
