@@ -5,119 +5,144 @@
 * @CreateDate:     2019/4/23 23:26
 */
 <template>
-    <div class="article-list">
-        <div class="article-item" v-for="(item, index) in articleList" :key="index">
-            <div class="article-left">
-                <p class="article-name" @click="articleDetail(item.link)">{{ item.name }}</p>
-                <div class="article-time">{{ item.time }}</div>
-                <p class="article-content">{{ item.content }}</p>
-            </div>
-            <div class="article-right">
-                <q-rcode :value="item.link" :options="{ size: 100 }"></q-rcode>
-                <div class="article-btn" @click="articleDetail(item.link)">阅读全文</div>
-            </div>
+  <div class="article-list">
+    <div class="article-item" v-for="(item, index) in articleList" :key="index">
+      <div class="article-left">
+        <p class="article-name" @click="articleDetail(item.link)">
+          {{ item.name }}
+        </p>
+        <div class="article-time">{{ item.time }}</div>
+        <p class="article-content">{{ item.content }}</p>
+      </div>
+      <div class="article-right">
+        <vue-qr
+          :text="item.link"
+          :size="100"
+          :margin="0"
+          colorDark="black"
+          colorLight="white"
+        ></vue-qr>
+        <div class="article-btn" @click="articleDetail(item.link)">
+          阅读全文
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-    import * as api from "../../constant/api"
-    import QRcode from '@xkeshi/vue-qrcode'
+// import * as api from "../../constant/api";
+import vueQr from "vue-qr";
 
-    export default {
-        components: {QRcode},
-        name: "ArticleList",
-        props: {
-            // 组件的位置
-            from: {
-                type: String,
-                default: 'article'
-            }
+export default {
+  components: { vueQr },
+  name: "ArticleList",
+  props: {
+    // 组件的位置
+    from: {
+      type: String,
+      default: "article",
+    },
+  },
+  data() {
+    return {
+      articleList: [
+        {
+          name: "vue-hash-calendar，移动端日期时间选择插件（使用篇）",
+          time: "2019.06.26 00:45",
+          content:
+            "按照惯例，先上效果图 vue-hash-calendar 基于 vue 2.X 开发的日历组件 支持手势滑动操作 原生 js 开发，没引入第三方...",
+          link: "https://www.jianshu.com/p/c088746157a8",
         },
-        data() {
-            return {
-                articleList: [],//文章列表
-            }
-        },
-        mounted() {
-            this.getArticleList();
-        },
-        computed: {
-
-        },
-        methods: {
-            async getArticleList() {
-                let data = await this.$axios('get', api.GET_ARTICLE_LIST);
-                                
-                this.articleList = data || [];
-
-                if (this.from === 'index') {
-                    this.articleList = this.articleList.slice(5);
-                }
-            },
-            articleDetail(link) {//查看文章详情
-                this.$ba.trackEvent('hxkj-首页','查看文章详情',link);
-                window.open(link);
-            }
-        }
-    }
+      ], //文章列表
+    };
+  },
+  mounted() {
+    this.getArticleList();
+  },
+  computed: {},
+  methods: {
+    async getArticleList() {
+      // let data = await this.$axios('get', api.GET_ARTICLE_LIST);
+      // this.articleList = data || [];
+      //   if (this.from === "index") {
+      //     this.articleList = this.articleList.slice(5);
+      //   }
+    },
+    articleDetail(link) {
+      //查看文章详情
+      this.$ba.trackEvent("hxkj-首页", "查看文章详情", link);
+      window.open(link);
+    },
+  },
+};
 </script>
 
 <style lang="stylus" scoped>
-    @import "../../style/common.styl"
+@import '../../style/common.styl';
 
-    .article-list {
-        margin-top 30px
-        font-size 14px
-        .article-item {
-            border-radius 5px
-            margin-bottom 30px
-            background white
-            flexAlign()
-            &:hover {
-                box-shadow 2px 2px 20px #000
-            }
-            .article-left {
-                padding 20px
-                border-right 1px dashed vice-font-color
-                padding-bottom 40px
-                .article-name {
-                    font-size 20px
-                    cursor pointer
-                    &:hover {
-                        color rgba(1, 32, 81, .8)
-                    }
-                }
-                .article-time {
-                    font-size 14px
-                    color vice-font-color
-                    margin-top 5px
-                    margin-bottom 15px
-                }
-                .article-content {
-                    line-height 25px
-                    font-weight 400
-                }
-            }
-            .article-right {
-                width 140px
-                padding 20px 15px
-                flexContent()
-                flex-direction column
-                .article-btn {
-                    border 1px solid main-color
-                    color main-color
-                    width 80px
-                    padding 2px 0
-                    text-align center
-                    border-radius 5px
-                    cursor pointer
-                    margin-top 10px
-                    &:hover {
-                        background rgba(1, 32, 81, .1)
-                    }
-                }
-            }
-        }
+.article-list {
+  margin-top: 30px;
+  font-size: 14px;
+
+  .article-item {
+    border-radius: 5px;
+    margin-bottom: 30px;
+    background: white;
+    flexAlign();
+
+    &:hover {
+      box-shadow: 2px 2px 20px #000;
     }
+
+    .article-left {
+      padding: 20px;
+      border-right: 1px dashed vice-font-color;
+      padding-bottom: 40px;
+
+      .article-name {
+        font-size: 20px;
+        cursor: pointer;
+
+        &:hover {
+          color: rgba(1, 32, 81, 0.8);
+        }
+      }
+
+      .article-time {
+        font-size: 14px;
+        color: vice-font-color;
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+
+      .article-content {
+        line-height: 25px;
+        font-weight: 400;
+      }
+    }
+
+    .article-right {
+      width: 140px;
+      padding: 20px 15px;
+      flexContent();
+      flex-direction: column;
+
+      .article-btn {
+        border: 1px solid main-color;
+        color: main-color;
+        width: 80px;
+        padding: 2px 0;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+
+        &:hover {
+          background: rgba(1, 32, 81, 0.1);
+        }
+      }
+    }
+  }
+}
 </style>
