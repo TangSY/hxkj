@@ -1,0 +1,27 @@
+# 本地 Nginx 部署，访问地址：https://hxkj.vip
+
+stages:
+  - build
+
+build:
+  stage: build
+  only:
+    # 指定当且仅当master分支有变动时，触发构建任务
+    - master
+  script:
+    # 安装依赖
+    - yarn
+    # 运行打包命令
+    - yarn build
+    # 进入打包输出目录
+    - cd ./dist
+    # 压缩所有文件
+    - tar -zcvf hxkj.tar.gz *
+    # 将压缩文件移动到 nginx 站点根目录
+    - mv hxkj.tar.gz /usr/share/nginx/html/
+    # 进入 nginx 站点根目录
+    - cd /usr/share/nginx/html
+    # 解压并覆盖原有文件
+    - tar -zxvf hxkj.tar.gz
+    # 移除压缩包
+    - rm -f hxkj.tar.gz
