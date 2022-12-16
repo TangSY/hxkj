@@ -1,10 +1,13 @@
 # 本地 Nginx 部署，访问地址：https://hxkj.vip
 
+#本次流程包含几个步骤，有多少个就写多少个，这边简单部署的话，用一个就够了
 stages:
-  - build
+  - deploy
 
-build:
-  stage: build
+# 任务名称
+deploy_job:
+  # 当前执行哪个步骤
+  stage: deploy
   only:
     # 指定当且仅当master分支有变动时，触发构建任务
     - master
