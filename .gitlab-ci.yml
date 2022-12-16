@@ -14,7 +14,7 @@ deploy_job:
   script:
     # 安装依赖
     - yarn
-    # 运行打包命令
+    # 运行项目打包命令
     - yarn build
     # 进入打包输出目录
     - cd ./dist
